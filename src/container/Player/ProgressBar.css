@@ -1,0 +1,29 @@
+#root {
+  --range-progress: 0;
+}
+
+.progress_bar {
+  -webkit-appearance: none;
+  outline: none;
+  width: 749px;
+  height: 4px;
+  background-color: #262a2c;
+  border-radius: 20px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,1) ;
+  overflow: hidden;
+
+  /* ... */
+}
+.progress_bar::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #facd66;
+    border-radius: 50%;
+    box-shadow: -410px 0 0 400px #facd66;
+    cursor: pointer;
+}
+/* .progress_bar::before {
+  background: red;
+  width: var(--range-progress);
+} */

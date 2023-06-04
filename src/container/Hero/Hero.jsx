@@ -1,11 +1,13 @@
 import React from "react";
 import { images } from "../../constants";
 import Sidebar from "../../components/Sidebar";
+import Player from "../Player/Player";
 
 const Hero = () => {
   return (
-    <div className="w-full pt-24  pl-7 text-white flex items-center">
+    <div className="w-full pl-7 text-white flex items-center">
       <Sidebar />
+      <div className="flex items-center gap-6">
       <div className="flex items-center gap-6">
         <div className="bg-[#609EAF] w-full flex relative overflow-hidden items-center rounded-[40px] max-w-[686px]">
           <img className="absolute right-0 " src={images.Hero_vector} alt="" />
@@ -71,7 +73,7 @@ const Hero = () => {
       </div>
       <div className="flex-1 w-full pl-6">
         <h2 className="font-bold text-2xl mb-[14px]">Top Charts</h2>
-        <div className=" bg-darkAlt py-4 pl-4 pr-5 rounded-[20px] flex items-center">
+        <div className=" bg-darkAlt py-4 pl-4 pr-5 cursor-pointer rounded-[20px] flex items-center">
           <img src={images.Top1} alt="album art" />
           <div className="flex items-center justify-between w-full">
             <div className="ml-4">
@@ -79,7 +81,7 @@ const Hero = () => {
               <p className="text-xs text-[#8C8E8F] mb-2">Sean swadder</p>
               <p className="text-xs">2:34:45</p>
             </div>
-            <div className="rounded-full cursor-pointer group w-[37px] h-[37px] border flex items-center justify-center border-[#D9D9D9]">
+            <div className="rounded-full cursor-pointer group w-[37px] h-[37px] border flex items-center justify-center border-[#333738]">
               <img
                 className=" group-hover:scale-110 transition duration-500"
                 src={images.Top_Heart}
@@ -88,7 +90,7 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <div className=" bg-darkAlt py-4 pl-4 pr-5 rounded-[20px] flex items-center">
+        <div className=" bg-darkAlt py-4 pl-4 pr-5 cursor-pointer rounded-[20px] my-3 flex items-center">
           <img src={images.Top2} alt="album art" />
           <div className="flex items-center justify-between w-full">
             <div className="ml-4">
@@ -96,7 +98,7 @@ const Hero = () => {
               <p className="text-xs text-[#8C8E8F] mb-2">Dj YK mule</p>
               <p className="text-xs">1:02:42</p>
             </div>
-            <div className="rounded-full cursor-pointer group w-[37px] h-[37px] border flex items-center justify-center border-[#D9D9D9]">
+            <div className="rounded-full cursor-pointer group w-[37px] h-[37px] border flex items-center justify-center border-[#333738]">
               <img
                 className=" group-hover:scale-110 transition duration-500"
                 src={images.Top_Heart}
@@ -105,7 +107,7 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <div className=" bg-darkAlt py-4 pl-4 pr-5 rounded-[20px] flex items-center">
+        <div className=" bg-darkAlt py-4 pl-4 pr-5 cursor-pointer rounded-[20px] flex items-center">
           <img src={images.Top3} alt="album art" />
           <div className="flex items-center justify-between w-full">
             <div className="ml-4">
@@ -113,7 +115,7 @@ const Hero = () => {
               <p className="text-xs text-[#8C8E8F] mb-2">Obi Datti</p>
               <p className="text-xs">2:01:25</p>
             </div>
-            <div className="rounded-full  cursor-pointer group w-[37px] h-[37px] border flex items-center justify-center border-[#D9D9D9]">
+            <div className="rounded-full  cursor-pointer group w-[37px] h-[37px] border flex items-center justify-center border-[#333738]">
               <img
                 className=" group-hover:scale-110 transition duration-500"
                 src={images.Top_Heart}
@@ -123,6 +125,8 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      </div>
+      {/* <Player/> */}
     </div>
   );
 };
