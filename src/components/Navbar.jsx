@@ -10,7 +10,7 @@ const Navbar = () => {
     ref.current.focus();
   };
   return (
-    <div className="w-full fixed z-10">
+    <div className="w-full fixed z-10 bg-bgColor">
       <div className="w-full h-[73px] flex items-center ">
         <div className="pl-7 py-7 cursor-pointer">
           <img className="w-[34px] h-[34px]" src={images.Logo} alt="Logo" />

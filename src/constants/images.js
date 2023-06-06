@@ -17,6 +17,13 @@ import Top1 from "../assets/top1.png";
 import Top2 from "../assets/top2.png";
 import Top3 from "../assets/top3.png";
 import Top_Heart from "../assets/top_Heart.png";
+import New1 from "../assets/new1.png";
+import New2 from "../assets/new2.png";
+import New3 from "../assets/new3.png";
+import New4 from "../assets/new4.png";
+import New5 from "../assets/New5.png";
+import New6 from "../assets/New6.png";
+import New7 from "../assets/New7.png";
 
 export default {
   Logo,
@@ -38,4 +45,11 @@ export default {
   Top2,
   Top3,
   Top_Heart,
+  New1,
+  New2,
+  New3,
+  New4,
+  New5,
+  New6,
+  New7,
 };
