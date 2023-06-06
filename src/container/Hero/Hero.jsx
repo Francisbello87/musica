@@ -2,6 +2,7 @@ import React from "react";
 import { images } from "../../constants";
 import Sidebar from "../../components/Sidebar";
 import Player from "../Player/Player";
+import NewRelease from "../NewRelease/NewRelease";
 
 const Hero = () => {
   return (
@@ -126,7 +127,7 @@ const Hero = () => {
         </div>
       </div>
       </div>
-      {/* <Player/> */}
+    
     </div>
   );
 };
