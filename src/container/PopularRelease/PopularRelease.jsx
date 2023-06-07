@@ -1,10 +1,10 @@
 import React from "react";
 import { newReleases } from "../../utils/data";
 
-const NewRelease = () => {
+const PopularRelease = () => {
   return (
     <div className="text-white mt-9 sm:ml-24 ml-6 mr-14 pb-10">
-      <h2 className="mb-3 font-bold sm:text-2xl text-xl">New Release</h2>
+      <h2 className="mb-3 font-bold sm:text-2xl text-xl">Popular in your area</h2>
       <div className="max-w-900px w-full mx-auto overflow-x-auto scrollbar-none">
         <div className="flex space-x-6">
           {newReleases.map((release, index) => (
@@ -20,4 +20,4 @@ const NewRelease = () => {
   );
 };
 
-export default NewRelease;
+export default PopularRelease;

@@ -24,6 +24,7 @@ import New4 from "../assets/new4.png";
 import New5 from "../assets/New5.png";
 import New6 from "../assets/New6.png";
 import New7 from "../assets/New7.png";
+import heroMobileVector from '../assets/hero_vector_mobile.png'
 
 export default {
   Logo,
@@ -52,4 +53,5 @@ export default {
   New5,
   New6,
   New7,
+  heroMobileVector,
 };

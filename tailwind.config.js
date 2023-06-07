@@ -11,6 +11,7 @@ export default {
         bgColor: "#1D2123",
         darkAlt: "#1A1E1F",
         primaryColor: "#03A9F4",
+        lightColor: "#EFEEE0",
       },
     },
   },
