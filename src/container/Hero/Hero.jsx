@@ -16,7 +16,7 @@ const Hero = ({ isMenu, setIsMenu }) => {
 
   return (
     <div className="w-full sm:pl-7 text-white flex items-center">
-      <Sidebar isMenu={isMenu} setIsMenu={setIsMenu} />
+      
       <div className="sm:flex items-center hidden gap-6">
         <div className="flex items-center gap-6">
           <div className="bg-[#609EAF] w-full flex relative overflow-hidden items-center rounded-[40px] max-w-[367px] sm:max-w-[686px]">
