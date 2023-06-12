@@ -1,14 +1,22 @@
 import React from "react";
 import { images } from "../constants";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = ({ isMenu, setIsMenu }) => {
+  const navigate = useNavigate();
+
+  const navigateToHome = () => {
+    navigate("/");
+  };
+
+
   return (
     <div className="pr-6 ">
       <div className="hidden sm:block sm:pl-7">
         <ul className="w-[52px] bg-darkAlt cursor-pointer rounded-full flex flex-col items-center pt-6">
           <li>
-            <a href="">
+            <a href="/">
               <img src={images.Home} alt="Home Button" />
             </a>
           </li>
@@ -41,15 +49,7 @@ const Sidebar = ({ isMenu, setIsMenu }) => {
           </li>
         </ul>
       </div>
-      {!isMenu && (
-        <motion.div whileInView={{x: [-100, 0], opacity: [0, 1]}} className="w-[90%] sm:hidden absolute top-20 bg-darkAlt h-[35%] z-50">
-            <div className="w-full h-full my-24 ml-9">
-                <ul>
-                  <li>Home</li>
-                </ul>
-            </div>
-        </motion.div>
-      )}
+   
     </div>
   );
 };

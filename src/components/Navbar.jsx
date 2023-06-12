@@ -1,13 +1,19 @@
 import React, { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { images } from "../constants";
 import { AiOutlineSearch } from "react-icons/ai";
 import { FaEquals, FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
-// import Sidebar from "./Sidebar";
+import { BiHomeAlt } from "react-icons/bi";
 
 const Navbar = ({ isMenu, setIsMenu }) => {
   const [isInput, setIsInput] = useState(false);
   const ref = useRef(null);
+  const navigate = useNavigate();
+
+  const navigateToHome = () => {
+    navigate("/");
+  };
 
   const handleMenu = () => {
     setIsMenu(!isMenu);
@@ -20,7 +26,7 @@ const Navbar = ({ isMenu, setIsMenu }) => {
     setIsInput(!isInput);
   };
   return (
-    <div className="w-full fixed z-10 bg-bgColor ">
+    <div className="w-full fixed z-50 bg-bgColor ">
       <div className="w-full hidden h-[73px] sm:flex items-center ">
         <div className="pl-7 py-7 cursor-pointer">
           <img className="w-[34px] h-[34px]" src={images.Logo} alt="Logo" />
@@ -50,7 +56,7 @@ const Navbar = ({ isMenu, setIsMenu }) => {
               <FaTimes className="text-lg text-lightColor" />
             )}
           </div>
-          <img className="ml-5" src={images.Logo} alt="" />
+          <img onClick={navigateToHome} className="ml-5" src={images.Logo} alt="" />
         </div>
         <div className="flex items-center">
           {isInput && (
@@ -68,6 +74,65 @@ const Navbar = ({ isMenu, setIsMenu }) => {
             className="text-[#404445] mr-6 text-lg cursor-pointer"
           />
         </div>
+        {!isMenu && (
+          <motion.div
+            whileInView={{ x: [-100, 0], opacity: [0, 1] }}
+            className="w-[90%] sm:hidden absolute top-16 left-0 bg-darkAlt h-[75vh] z-50"
+          >
+            <div className="w-full h-full my-14 ml-9">
+              <ul className="mobileNav">
+                <li className="">
+                  <a href="" className="flex items-center">
+                    <BiHomeAlt className=" text-3xl text-secondaryColor drop-shadow-md shadow-secondaryColor" />
+                    <p className="text-[17px] text-lightColor ml-7 font-bold">
+                      Home
+                    </p>
+                  </a>
+                </li>
+                <li className="">
+                  <a href="" className="flex items-center">
+                    <img className="w-[28px] h-[28px]"  src={images.Playlist} alt="Playlist Button" />
+                    <p className="text-[17px] text-[#4F524F] ml-7 font-bold">
+                      My collections
+                    </p>
+                  </a>
+                </li>
+                <li className="">
+                  <a href="" className="flex items-center">
+                    <img className="w-[28px] h-[28px]" src={images.Radio} alt="Radio Button" />
+                    <p className="text-[17px] text-[#4F524F] ml-7 font-bold">
+                      Radio
+                    </p>
+                  </a>
+                </li>
+                <li className="">
+                  <a href="" className="flex items-center">
+                    <img className="w-[28px] h-[28px]" src={images.Videos} alt="Video Button" />
+                    <p className="text-[17px] text-[#4F524F] ml-7 font-bold">
+                      Music videos
+                    </p>
+                  </a>
+                </li>
+                <li className="">
+                  <a href="" className="flex items-center">
+                    <img className="w-[28px] h-[28px]" src={images.Profile} alt="Account Button" />
+                    <p className="text-[17px] text-[#4F524F] ml-7 font-bold">
+                      Profile
+                    </p>
+                  </a>
+                </li>
+                <li className="">
+                  <a href="" className="flex items-center">
+                    <img className="w-[28px] h-[28px]" src={images.Logout} alt="Logout Button" />
+                    <p className="text-[17px] text-[#4F524F] ml-7 font-bold">
+                      Log out
+                    </p>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </motion.div>
+        )}
       </div>
     </div>
   );

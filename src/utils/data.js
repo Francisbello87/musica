@@ -1,4 +1,5 @@
 import everything from "../assets/097 BRIAN ADAMS - EVERTHING I DO.mp3";
+import vividImagination from "../assets/Vivid imagination..mp3"
 import player_art from "../assets/player_art.png";
 import { images } from "../constants";
 
@@ -8,6 +9,12 @@ export const tracks = [
     src: everything,
     author: "Bryan Adams",
     thumbnail: player_art,
+  },
+  {
+    title: "Vivid Imagination",
+    src: vividImagination,
+    author: "Kwam 1",
+    // thumbnail: player_art,
   },
 ];
 
@@ -69,3 +76,83 @@ export const topCharts = [
     time: "2:01:45",
   },
 ];
+
+export const trackLists = [
+  {
+    id: 1,
+    art:images.New1,
+    heart: images.heart1,
+    title: "Let me love you ~ ",
+    status: " Single",
+    time:"4:07",
+    option:images.more,
+    artist: "Krisx"
+
+  },
+  {
+    id: 2,
+    art:images.New3,
+    heart: images.heart1,
+    title: "Watin man go do  ~ ",
+    status: " African Giant",
+    time:"4:07",
+    option:images.more,
+    artist: "Burna"
+
+  },
+  {
+    id: 3,
+    art:images.New2,
+    heart: images.heart1,
+    title: "Stand strong ~ ",
+    status: " Single",
+    time:"4:07",
+    option:images.more,
+    artist: "Davido"
+
+  },
+  {
+    id: 4,
+    art:images.New5,
+    heart: images.heart1,
+    title: "Closa ~ ",
+    status: "Single",
+    time:"4:07",
+    option:images.more,
+    artist: "Ybee"
+
+  },
+  {
+    id: 5,
+    art:images.New4,
+    heart: images.heart1,
+    title: "Suddenly ~ ",
+    status: "Entertainer",
+    time:"4:07",
+    option:images.more,
+    artist: "D'banj"
+
+  },
+  {
+    id: 6,
+    art:images.New7,
+    heart: images.heart1,
+    title: "Gongo aso ~ ",
+    status: "Gongo aso",
+    time:"4:07",
+    option:images.more,
+    artist: "9ice"
+
+  },
+  {
+    id: 7,
+    art:images.New6,
+    heart: images.heart1,
+    title: "Pon Pon ~ ",
+    status: "C.E.O",
+    time:"4:07",
+    option:images.more,
+    artist: "Dagrin"
+
+  },
+]

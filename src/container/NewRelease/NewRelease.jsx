@@ -3,7 +3,7 @@ import { newReleases } from "../../utils/data";
 
 const NewRelease = () => {
   return (
-    <div className="text-white mt-9 sm:ml-24 ml-6 mr-14 pb-10">
+    <div className="text-white mt-9 sm:ml-24  mr-10 pb-10">
       <h2 className="mb-3 font-bold sm:text-2xl text-xl">New Release</h2>
       <div className="max-w-900px w-full mx-auto overflow-x-auto scrollbar-none">
         <div className="flex space-x-6">

@@ -19,12 +19,19 @@ import Top3 from "../assets/top3.png";
 import Top_Heart from "../assets/top_Heart.png";
 import New1 from "../assets/new1.png";
 import New2 from "../assets/new2.png";
-import New3 from "../assets/new3.png";
+import New3 from "../assets/New3.png";
 import New4 from "../assets/new4.png";
 import New5 from "../assets/New5.png";
 import New6 from "../assets/New6.png";
 import New7 from "../assets/New7.png";
-import heroMobileVector from '../assets/hero_vector_mobile.png'
+import heroMobileVector from "../assets/hero_vector_mobile.png";
+import shuffleON from "../assets/shuffleOff.png";
+import leadImage from "../assets/Lead-image.png";
+import play from "../assets/Play.png";
+import collection from "../assets/music-square-add.png";
+import heart from "../assets/Heart.png";
+import heart1   from "../assets/Heart1.png";
+import more  from "../assets/more-vertical.png";
 
 export default {
   Logo,
@@ -54,4 +61,11 @@ export default {
   New6,
   New7,
   heroMobileVector,
+  shuffleON,
+  leadImage,
+  play,
+  collection,
+  heart,
+  heart1,
+  more,
 };
