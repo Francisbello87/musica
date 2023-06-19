@@ -1,24 +1,36 @@
+import { useDispatch, useSelector } from "react-redux";
+
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { images } from "../../constants";
 import { topCharts } from "../../utils/data";
 import NewRelease from "../NewRelease/NewRelease";
 import PopularRelease from "../PopularRelease/PopularRelease";
+import { useGetTopChartsQuery } from "../../redux/services/shazam";
+import { Loader, Error } from "../../components";
 
 const Hero = ({ isMenu, setIsMenu }) => {
+  const dispatch = useDispatch();
+  const { activeSong, isPlaying } = useSelector((state) => state.player);
+  const { data, isFetching, error } = useGetTopChartsQuery();
+
   const [width, setWidth] = useState(window.innerWidth);
   const navigate = useNavigate();
+
+  if (isFetching) return <Loader title="Loading songs ..." />;
+
+  if (error) return <Error />;
 
   const navigateToViewChart = () => {
     navigate("/charts");
   };
-  useEffect(() => {
-    const handleResize = () => setWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  // useEffect(() => {
+  //   const handleResize = () => setWidth(window.innerWidth);
+  //   window.addEventListener("resize", handleResize);
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize);
+  //   };
+  // }, []);
 
   return (
     <div className="w-full sm:pl-7 text-white px-5 ">
@@ -108,57 +120,27 @@ const Hero = ({ isMenu, setIsMenu }) => {
           </div>
           <div className="hidden sm:block flex-1 w-full pl-6">
             <h2 className="font-bold text-2xl mb-[14px]">Top Charts</h2>
-            <div className=" bg-darkAlt w-[417px] py-4 pl-4 pr-5 cursor-pointer rounded-[20px] flex items-center">
-              <img src={images.Top1} alt="album art" />
-              <div className="flex items-center justify-between w-full">
-                <div className="ml-4">
-                  <p>Golden age of 80s</p>
-                  <p className="text-xs text-[#8C8E8F] mb-2">Sean swadder</p>
-                  <p className="text-xs">2:34:45</p>
-                </div>
-                <div className="rounded-full cursor-pointer group w-[37px] h-[37px] border flex items-center justify-center border-[#333738]">
-                  <img
-                    className=" group-hover:scale-110 transition duration-500"
-                    src={images.Top_Heart}
-                    alt=""
-                  />
-                </div>
-              </div>
-            </div>
-            <div className=" bg-darkAlt py-4 pl-4 pr-5 cursor-pointer rounded-[20px] my-3 flex items-center">
-              <img src={images.Top2} alt="album art" />
-              <div className="flex items-center justify-between w-full">
-                <div className="ml-4">
-                  <p>Reggae “n” blues</p>
-                  <p className="text-xs text-[#8C8E8F] mb-2">Dj YK mule</p>
-                  <p className="text-xs">1:02:42</p>
-                </div>
-                <div className="rounded-full cursor-pointer group w-[37px] h-[37px] border flex items-center justify-center border-[#333738]">
-                  <img
-                    className=" group-hover:scale-110 transition duration-500"
-                    src={images.Top_Heart}
-                    alt=""
-                  />
+            {/* {
+              data?.map((song, i)=>(
+                <div className=" bg-darkAlt w-[417px] py-4 pl-4 pr-5 cursor-pointer rounded-[20px] flex items-center">
+                <img src={images.Top1} alt="album art" />
+                <div className="flex items-center justify-between w-full">
+                  <div className="ml-4">
+                    <p>Golden age of 80s</p>
+                    <p className="text-xs text-[#8C8E8F] mb-2">Sean swadder</p>
+                    <p className="text-xs">2:34:45</p>
+                  </div>
+                  <div className="rounded-full cursor-pointer group w-[37px] h-[37px] border flex items-center justify-center border-[#333738]">
+                    <img
+                      className=" group-hover:scale-110 transition duration-500"
+                      src={images.Top_Heart}
+                      alt=""
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className=" bg-darkAlt py-4 pl-4 pr-5 cursor-pointer rounded-[20px] flex items-center">
-              <img src={images.Top3} alt="album art" />
-              <div className="flex items-center justify-between w-full">
-                <div className="ml-4">
-                  <p onClick={navigateToViewChart}>Tomorrow’s tunes</p>
-                  <p className="text-xs text-[#8C8E8F] mb-2">Obi Datti</p>
-                  <p className="text-xs">2:01:25</p>
-                </div>
-                <div className="rounded-full  cursor-pointer group w-[37px] h-[37px] border flex items-center justify-center border-[#333738]">
-                  <img
-                    className=" group-hover:scale-110 transition duration-500"
-                    src={images.Top_Heart}
-                    alt=""
-                  />
-                </div>
-              </div>
-            </div>
+              ))
+            } */}
           </div>
         </div>
         <div className="sm:hidden flex flex-col max-w-900px w-full mx-auto overflow-x-auto scrollbar-none">
@@ -257,7 +239,12 @@ const Hero = ({ isMenu, setIsMenu }) => {
                         src={topChart.art}
                         alt="Track Cover Art"
                       />
-                      <p onClick={navigateToViewChart} className=" mt-4 text-sm">{topChart.title}</p>
+                      <p
+                        onClick={navigateToViewChart}
+                        className=" mt-4 text-sm"
+                      >
+                        {topChart.title}
+                      </p>
                       <p className="text-xs text-[#595B5B] mb-6">
                         {topChart.artiste}
                       </p>
@@ -277,7 +264,7 @@ const Hero = ({ isMenu, setIsMenu }) => {
           </div>
         </div>
       </div>
-      <NewRelease />
+      <NewRelease isPlaying={isPlaying} activeSong={activeSong} />
       <PopularRelease />
     </div>
   );

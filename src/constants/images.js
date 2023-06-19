@@ -32,6 +32,7 @@ import collection from "../assets/music-square-add.png";
 import heart from "../assets/Heart.png";
 import heart1   from "../assets/Heart1.png";
 import more  from "../assets/more-vertical.png";
+import loader from "../assets/Loader.gif"
 
 export default {
   Logo,
@@ -68,4 +69,5 @@ export default {
   heart,
   heart1,
   more,
+  loader
 };
